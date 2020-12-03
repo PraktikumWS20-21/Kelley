@@ -22,6 +22,38 @@
 
 % This file checks in ~ 1 min on my laptop.
 
+\documentclass[a4paper,draft]{amsproc}
+\title{\textbf{Kelley}}
+
+\date{}
+\begin{document}
+
+\theoremstyle{plain}
+ \newtheorem{theorem}{Theorem}[section]
+ \newtheorem{lemma}{Theorem}[section]
+ \newtheorem{proposition}{Theorem}[section]
+\theoremstyle{definition}
+ \newtheorem{example}{Example}[section]
+ \newtheorem{definition}{Definition}[section]
+ \newtheorem{signature}{Signature}[section]
+\theoremstyle{remark}
+ \newtheorem{remark}{Remark}[section]
+ \newtheorem{notation}{Notation}[section]
+\theoremstyle{axiom}
+ \newtheorem{axiom}{Axiom}[section]
+ \numberwithin{equation}{section}
+
+\newenvironment{forthel}{}{}
+\maketitle
+
+
+\begin{forthel}
+[synonym element/-s]
+
+\begin{signature}[ElmSort]
+An element is a notion.
+\end{signature}
+
 \section{The Classification Axiom Scheme}
 
 Let $x, y, z, r, s, t, u, v, a, b, c, d, e$ stand for classes.
@@ -618,3 +650,8 @@ $u \in \domain g$ and $v = g(u)$.
 Then $u \in \domain f$ and $v = f(u)$.
 Then $w \in f$. end.
 \end{proof}
+
+
+\end{forthel}
+
+\end{document}

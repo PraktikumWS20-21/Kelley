@@ -29,23 +29,35 @@
 \begin{document}
 
 \theoremstyle{plain}
- \newtheorem{theorem}{Theorem}[section]
- \newtheorem{lemma}{Theorem}[section]
- \newtheorem{proposition}{Theorem}[section]
+ \newtheorem{theorem}{Theorem}
+ \newtheorem*{theorem*}{Theorem}
+ \newtheorem{lemma}[theorem]{Theorem}
+ \newtheorem*{lemma*}{Theorem}
+ \newtheorem{proposition}[theorem]{Theorem}
+ \newtheorem*{proposition*}{Theorem}
 \theoremstyle{definition}
- \newtheorem{example}{Example}[section]
- \newtheorem{definition}{Definition}[section]
- \newtheorem{signature}{Signature}[section]
+ \newtheorem{example}[theorem]{Example}
+ \newtheorem*{example*}{Example}
+ \newtheorem{definition}[theorem]{Definition}
+ \newtheorem*{definition*}{Definition}
+ \newtheorem{signature}[theorem]{Signature}
+ \newtheorem*{signature*}{Signature}
 \theoremstyle{remark}
- \newtheorem{remark}{Remark}[section]
- \newtheorem{notation}{Notation}[section]
+ \newtheorem{remark[theorem]}{Remark}
+ \newtheorem*{remark*}{Remark}
+ \newtheorem{notation}[theorem]{Notation}
+ \newtheorem*{notation*}{Notation}
 \theoremstyle{axiom}
- \newtheorem{axiom}{Axiom}[section]
+ \newtheorem{axiom}{Axiom}
+ \newtheorem*{axiom*}{Axiom}
  \numberwithin{equation}{section}
 
 \newenvironment{forthel}{}{}
 \maketitle
 
+\newcommand{\cal}[1]{\mathcal{#1}}
+\newcommand{\domain}[1]{\textnormal{domain}}
+\newcommand{\range}[1]{\textnormal{range}}
 
 \begin{forthel}
 [synonym element/-s]
@@ -164,7 +176,9 @@ $0 \cup x = x$ and $0 \cap x = 0$.
 \end{theorem}
 
 % Definition 18
-\begin{definition} $\cal{U} = \{$set $x : x = x\}$.\end{definition}
+\begin{definition}
+	$\cal{U} = \{$set $x : x = x\}$.
+\end{definition}
 Let the universe stand for $\cal{U}$.
 
 % Theorem 19
@@ -207,9 +221,9 @@ Let $x \subset y$ stand for $x$ is a subclass of $y$.
 Let $x$ is contained in $y$ stand for $x \subset y$.
 
 % Unnumbered
-\begin{lemma}
+\begin{lemma*}
 $0 \subset 0$ and $0 \notin 0$.
-\end{lemma}
+\end{lemma*}
 
 % Theorem 26
 \begin{theorem}
@@ -518,9 +532,9 @@ $r^{-1} = \{[b,a] | a, b$ are objects and $[a,b] \in r\}$.
 Let the relation inverse to $r$ stand for $r^{-1}$.
 
 % Unnumbered
-\begin{lemma*}
+\begin{lemma}
 $r^{-1}$ is a relation.
-\end{lemma*}
+\end{lemma}
 
 % Theorem 61
 \begin{theorem}
@@ -593,12 +607,12 @@ If $f, g$ are maps then $f \circ g$ is a map.
 
 % Definition 65
 \begin{definition}
-$\domain x = {object u | $ there exists an object $v$ such that $[u,v] \in x}$.
+$\domain x = \{object u | $ there exists an object $v$ such that $[u,v] \in x\}$.
 \end{definition}
 
 % Definition 66
 \begin{definition}
-$\range x = {object v | $ there exists an object $u$ such that $[u,v] \in x}$.
+$\range x = \{object v | $ there exists an object $u$ such that $[u,v] \in x\}$.
 \end{definition}
 
 % Theorem 67

@@ -61,23 +61,32 @@
 
 \begin{forthel}
 [synonym element/-s]
-
 \begin{signature}[ElmSort]
 An element is a notion.
+\end{signature}
+
+%[synonym object/-s]
+%\begin{signature}
+%An object is a notion.
+%\end{signature}
+
+[synonym class/-es]
+\begin{signature}
+A class is a notion.
 \end{signature}
 
 % section not yet supported?
 %\section{The Classification Axiom Scheme}
 
-Let  x, y, z, r, s, t, u, v, a, b, c, d, e  stand for classes.
+Let  x, y, z, r, s, t  denote classes.
+Let  b, c, d, e  denote objects.
 
-Let  a \neq b  stand for  a  !=  b .
-Let  a \in b  stand for  a  is an element of  b .
+Let  c neq b  stand for  c  !=  b .
+Let  c in x  stand for  c  is an element of  x .
 
 % Axiom I. Axiom of extent.
-\begin{axiom} For each  x, y   
-it is true that  x = y  if and only if for each  z \  z \in x  
-when and only when  z \in y .
+\begin{axiom}
+For each  x, y   x = y  if and only if for each  z   z in x  if and only if  z in y .
 \end{axiom}
 
 % II Classification axiom-scheme corresponds to the way
@@ -85,26 +94,29 @@ when and only when  z \in y .
 % in Naproche-SAD
 
 [synonym set/-s]
+\begin{signature}
+A set is a notion.
+\end{signature}
 
 % Definition 1
 \begin{definition} 
- x  is a set iff for some  y   x \in y .
+ x  is set iff for some  y   x in y .
 \end{definition}
 
 %\section{ELEMENTARY ALGEBRA OF CLASSES}
 
 % Definition 2
 \begin{definition} 
- x \cup y = \{ set  z : z \in x  or  z \in y \} .
+ x cup y = { set  z : z in x  or  z in y } .
 \end{definition}
 
 % Definition 3
 \begin{definition} 
- x \cap y = \{ set  u : u \in x  and  u \in y \} .
+ x cap y = { set  u : u in x  and  u in y } .
 \end{definition}
 
-Let the union of  x  and  y  stand for  x \cup y .
-Let the intersection of  x  and  y  stand for  x \cap y .
+Let the union of  x  and  y  stand for  x cup y .
+Let the intersection of  x  and  y  stand for  x cap y .
 
 % Theorem 4
 \begin{theorem}

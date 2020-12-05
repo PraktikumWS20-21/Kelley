@@ -65,24 +65,29 @@
 An element is a notion.
 \end{signature}
 
-%[synonym object/-s]
+%[synonym xobject/-s]
 %\begin{signature}
-%An object is a notion.
+%An xobject is a notion.
 %\end{signature}
 
-[synonym class/-es]
-\begin{signature}
-A class is a notion.
-\end{signature}
+%[synonym class/-es]
+%\begin{signature}
+%A class is a notion.
+%\end{signature}
 
 % section not yet supported?
 %\section{The Classification Axiom Scheme}
 
-Let  x, y, z, r, s, t  denote classes.
-Let  b, c, d, e  denote objects.
+%Let  x, y, z, r, s, t  denote classes.
+%Let  b, c, d, e stand for xobjects.
+Let  x, y, z, r, s, t, b, c, d, e  stand for sets.
 
-Let  c neq b  stand for  c  !=  b .
-Let  c in x  stand for  c  is an element of  x .
+Let  a neq b  stand for  a  !=  b .
+Let  a in x  stand for  a  is an element of  x .
+
+%\begin{axiom}
+%Every element of  x  is an xobject.
+%\end{axiom}
 
 % Axiom I. Axiom of extent.
 \begin{axiom}
@@ -93,26 +98,27 @@ For each  x, y   x = y  if and only if for each  z   z in x  if and only if  z i
 % "classifications", i.e., abstraction terms are handled
 % in Naproche-SAD
 
-[synonym set/-s]
-\begin{signature}
-A set is a notion.
-\end{signature}
+%[synonym set/-s]
+%\begin{definition}
+% A set is a class that is an element of some class.
+%\end{definition}
 
 % Definition 1
-\begin{definition} 
- x  is set iff for some  y   x in y .
-\end{definition}
+%\begin{definition} 
+% x  is a set iff for some  y   x in y .
+%\end{definition}
 
 %\section{ELEMENTARY ALGEBRA OF CLASSES}
 
 % Definition 2
+%Let u denote an object.
 \begin{definition} 
- x cup y = { set  z : z in x  or  z in y } .
+ x cup y = {  u | u in x  or  u in y } .
 \end{definition}
 
 % Definition 3
 \begin{definition} 
- x cap y = { set  u : u in x  and  u in y } .
+ x cap y = {  u | u in x  and  u in y } .
 \end{definition}
 
 Let the union of  x  and  y  stand for  x cup y .
@@ -120,24 +126,24 @@ Let the intersection of  x  and  y  stand for  x cap y .
 
 % Theorem 4
 \begin{theorem}
- (z \in x \cup y  iff  z \in x  or  z \in y) 
-and  (z \in x \cap y  iff  z \in x  and  z \in y) .
+ (z in x cup y  iff  z in x  or  z in y) 
+and  (z in x cap y  iff  z in x  and  z in y) .
 \end{theorem}
 
 % Theorem 5
 \begin{theorem}
- x \cup x = x  and  x \cap x = x .
+ x cup x = x  and  x cap x = x .
 \end{theorem}
 
 % Theorem 6
 \begin{theorem}
- x \cup y = y \cup x  and  x \cap y = y \cap x .
+ x cup y = y cup x  and  x cap y = y cap x .
 \end{theorem}
 
 % Theorem 7
 \begin{theorem}
- (x \cup y) \cup z = x \cup (y \cup z)  
-and  (x \cap y) \cap z = x \cap (y \cap z) .
+ (x cup y) cup z = x cup (y cup z)  
+and  (x cap y) cap z = x cap (y cap z) .
 \end{theorem}
 
 % Theorem 8

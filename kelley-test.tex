@@ -532,7 +532,7 @@ If  x  and  y  are sets and  [x,y] = [u,v]  then
 \begin{definition} 
 %A class  rr  is a relation if and only if for each element  z  of  rr 
 %there is  x  and  y  such that  z = [x,y] .
-A relation is a set r such that for each element z of r there is x and y such that z = [x,y].
+A relation is a set r such that for each z if z in r then there exist objects x and y such that z = [x,y].
 %every element of r is an ordered pair.
 \end{definition}
 
@@ -598,14 +598,14 @@ Assume  r subset s . Then  r^{-1} subset s^{-1} .
 \begin{lemma}
  (r circ s)^{-1} subset (s^{-1}) circ (r^{-1}) .
 %\end{lemma}
-Proof.
-Let  u in (r circ s)^{-1} .
-Take  c  and  a  such that  u = [c,a] .
-Take an object  b  such that ( [a,b] in s  and  [b,c] in r ).
-Indeed  [a,c] in r circ s .
- [b,a] in s^{-1}  and  [c,b] in r^{-1} .
-Then  [c,a] in (s^{-1}) circ (r^{-1}) .
-qed.
+%Proof.
+%Let  u in (r circ s)^{-1} .
+%Take  c  and  a  such that  u = [c,a] .
+%Take an object  b  such that ( [a,b] in s  and  [b,c] in r ).
+%Indeed  [a,c] in r circ s .
+% [b,a] in s^{-1}  and  [c,b] in r^{-1} .
+%Then  [c,a] in (s^{-1}) circ (r^{-1}) .
+%qed.
 \end{lemma}
 
 % Unnumbered
@@ -710,7 +710,225 @@ Then  w in f . end.
 qed.
 \end{theorem}
 
+% Axiom V: Axiom of substitution
+\begin{axiom}
+If f is a map and domain f is a set then range f is a set.
+\end{axiom}
+
+% Axiom VI: Axiom of amalgamation
+\begin{axiom}
+If x is a set then bigcup x is a set.
+\end{axiom}
+
+% Definition 72
+\begin{definition}
+x times y = {[u,v] | u in x and v in y}.
+\end{definition}
+
+Let the cartesian product of x and y denote x times y.
+
+% Theorem 73
+\begin{theorem}
+If u and y are sets then \{u\} times y is a set.
+\end{theorem}
+
+% Theorem 74
+\begin{theorem}
+If x and y are sets then x times y is a set.
+\end{theorem}
+
+% Theorem 75
+\begin{theorem}
+If f is a map and domain f is a set then f is a set.
+Proof.
+f subset (domain f) times (range f).
+qed.
+\end{theorem}
+
+% Definition 76
+\begin{definition}
+y^x = {map f | domain f = x and range f subset y}.
+\end{definition}
+
+% Theorem 77
+\begin{theorem}
+If x and y are sets then y^x is a set.
+\end{theorem}
+
+% Definition 78
+\begin{definition}
+f is on x iff f is a map and x = domain f.
+\end{definition}
+
+% Definition 79
+\begin{definition}
+f is to y iff f is a map and range f subset y.
+\end{definition}
+
+% Definition 80
+\begin{definition}
+f is onto y iff f is a map and range f = y.
+\end{definition}
 
 \end{forthel}
 
+\section{WELL ORDERING}
+\begin{forthel}
+
+Let r stand for a relation.
+
+% Definition 81
+% x \sim_{r} y
+Let x (r) y stand for [x,y] in r.
+
+% Definition 82
+\begin{definition}
+r connects x iff for all elements u,v of x u (r) v or v (r) u or v = u.
+\end{definition}
+
+% Definition 83
+\begin{definition}
+r is transitive in x iff for all elements u,v,w of x if u (r) v and v (r) w then u (r) w.
+\end{definition}
+
+% Definition 84
+\begin{definition}
+r is asymmetric in x iff for all elements u,v of x if u (r) v then not v (r) u.
+\end{definition}
+
+% Definition 85
+% x neq y iff it is false that x = y.
+
+% Definition 86
+\begin{definition}
+z minimizes x in r iff z in x. %and for each y in x not y (r) a.
+\end{definition}
+
+[synonym wellorder/-s]
+% Definition 87
+\begin{definition}
+r wellorders x iff r connects x and for each subclass y of x such that y neq 0
+there exists an object z such that z minimizes y in r.
+\end{definition}
+
+% Theorem 88a
+\begin{theorem}
+If r wellorders x then r is asymmetric in x.
+Proof.
+Assume r wellorders x.
+Let u \in x and v \in x.
+Assume u (r) v and v (r) u.
+Then <u,v> \subset x.
+Take an object z such that z minimizes <u,v> in r.
+z = u or z = v.
+Then not v (r) u or not u (r) v.
+Contradiction. 
+Then r is asymmetric in x.
+qed.
+\end{theorem}
+
+% Theorem 88b
+\begin{theorem}
+If r wellorders x then r is transitive in x.
+Proof.
+Assume r wellorders x.
+Assume that r is not transitive in x.
+Take elements u,v,w of x such that 
+u (r) v and v (r) w and not u (r) w.
+u \neq w. Indeed r is asymmetric in x.
+w (r) u.
+There is no object a such that a minimizes (<u> \cup <v>) \cup <w> in r.
+(<u> \cup <v>) \cup <w> \subset x.
+Take an object b such that b minimizes (<u> \cup <v>) \cup <w> in r.
+Contradiction.
+qed.
+\end{theorem}
+
+[synonym section/-s]
+% Definition 89
+\begin{definition}
+A section of x in r is a set y such that y subset x and r wellorders x
+and for each objects u,v such that u in x and v in y and u (r) v u in y.
+\end{definition}
+
+% Theorem 90
+\begin{theorem}
+If z neq 0 and every element of z is a section of x in r then bigcup z and bigcap z are sections of x in r.
+\end{theorem}
+
+% Theorem 91
+\begin{theorem}
+If y is a section of x in r and y neq x then
+y = {object u | u in x and u (r) v} for some element v of x.
+Proof.
+Let y be a section of x in r and y neq x.
+Take an object v such that v minimizes x (r) y.
+qed.
+\end{theorem}
+
+% Theorem 92
+\begin{theorem}
+If x and y are sections of z in r then x subset y or y subset x.
+\end{theorem}
+
+[synonym orderpreserve/-s]
+% Definition 93
+\begin{definition}
+f orderpreserves r and s iff r wellorders domain f and s wellorders range f
+and f(u) (s) f(v) for all elements u,v of domain f such that u (r) v.
+\end{definition}
+
+% Theorem 94
+\begin{theorem}
+If x is a section of y in r and f orderpreserves r and r and f is on x and f is to y
+then for each element u of x not f(u) (r) u.
+\end{theorem}
+
+% Definition 95
+\begin{definition}
+A oneonefunction is a map f such that f^{-1} is a map.
+\end{definition}
+
+% Unnumbered
+\begin{lemma}
+f is a oneonefunction iff for all elements x,y of domain f such that x neq y f(x) neq f(y).
+\end{lemma}
+
+% Theorem 96a
+\begin{theorem}
+If f orderpreserves r and s then f is a oneonefunction.
+\end{theorem}
+
+% Theorem 96b
+\begin{theorem}
+If f orderpreserves r and s then f^{-1} orderpreserves s and r.
+\end{theorem}
+
+% Theorem 97
+\begin{theorem}
+If f and g orderpreserve r and s and domain f,domain g are sections of x in r
+and range f,range g are sections of y in s then f subset g or g subset f.
+\end{theorem}
+
+% Definition 98
+\begin{definition}
+f orderpreserves r and s in x and y iff r wellorders x and s wellorders y and
+f orderpreserves r and s and domain f is a section of y in s.
+\end{definition}
+
+% Theorem 99
+\begin{theorem}
+If r wellorders x and s wellorders y then there exists a map f such that
+f orderpreserves r and s in x and y and (domain f = x or range f = y).
+\end{theorem}
+
+% Theorem 100
+\begin{theorem}
+If r wellorders x and s wellorders y and x is a set and y is not a set
+then there exists a %unique
+ map f such that f orderpreserves r and s in x and y
+and domain f = x.
+\end{theorem}
+
+\end{forthel}
 \end{document}

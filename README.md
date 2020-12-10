@@ -8,3 +8,4 @@ The .ftl file of the Kelley-formalization.
  - <del>section is not yet supported.</del>
  - \ is not yet supported. ("\neq")
  - <del>No match in record selector trmName -- what's this?</del> This looks like a signal that one should change his expression of defining a new notion.
+ - [Parser] Error: "files/kelley-test.tex" (line 804, column 10) ForTheL.Pattern.patName: name already exists <- whats this

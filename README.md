@@ -15,7 +15,7 @@ The .ftl file of the Kelley-formalization.
  
 # Changes from kelley_geparst.tex to kelley-merge.tex:
  - !!! Note that kelley-merge.tex should be parsed with the program under the branch [math-mode-hack](https://github.com/PraktikumWS20-21/Naproche-SAD/tree/math-mode-hack) !!!
- - Definition 40: the singleton of x is denoted by <x>. We might not be able to change this.
+ - Definition 40: the singleton of x is denoted by `<x>`. We might not be able to change this.
  - \{...\} instead of {...} because of LaTeX
  - Attention: Theorem 67 and 69 were commented. Their proof have to be checked.
  - Definition 86 is false since I didn't find a correct way to write it. WIP

@@ -230,7 +230,7 @@ a subclass of y is a class x such that for each class z if z \in x then z \in y.
 \end{definition}
 
 Let x \subset y stand for x is a subclass of y.
-Let x is contained \in y stand for x \subset y.
+Let x is contained in y stand for x \subset y.
 
 % Unnumbered
 \begin{lemma}
@@ -930,6 +930,77 @@ If r wellorders x and s wellorders y and x is a set and y is not a set
 then there exists a %unique
  map f such that f orderpreserves r and s in x and y
 and \domain f = x.
+\end{theorem}
+
+\end{forthel}
+
+\section{ORDINALS}
+\begin{forthel}
+
+Let $x, y$ denote classes.
+% AXIOM VII: Axiom of regularity
+\begin{axiom}
+If $x \neq 0$ then there is an element $y$ of $x$ such that $x \cap y = 0$.
+\end{axiom}
+
+% Theorem 101
+\begin{theorem}[101]
+$x \notin x$.
+\end{theorem}
+
+% Theorem 102
+\begin{theorem}[102]
+Not ($x \in y$ and $y \in x$).
+\end{theorem}
+
+% Definition 103
+\begin{definition}[103]
+$E = \{[x,y] : x \in y\}$.
+\end{definition}
+
+% Unnumbered
+\begin{lemma}
+If $x \in y$ and $y$ is not a set then $[x,y] = \cal{U}$ and $[x,y] \notin E$.
+\end{lemma}
+
+% Theorem 104
+\begin{theorem}[104]
+$E$ is not a set.
+\end{theorem}
+
+% Definition 105
+\begin{definition}[105]
+A fullclass is a class $x$ such that each element of $x$ is contained in $x$.
+\end{definition}
+
+% Unnumbered
+\begin{lemma}
+$x$ is a fullclass iff each element of each element of $x$ is an element of $x$.
+\end{lemma}
+
+% Definition 106
+\begin{definition}[106]
+An ordinal is a class $x$ such that $E$ connects $x$ and $x$ is a fullclass.
+\end{definition}
+
+% Theorem 107
+\begin{theorem}[107]
+If $x$ is an ordinal then $E$ wellorders $x$.
+\end{theorem}
+
+% Theorem 108
+\begin{theorem}[108]
+If $x$ is an ordinal and $y \subset x$ and $y \neq x$ and $y$ is a fullclass then $y \in x$.
+\end{theorem}
+
+% Theorem 109
+\begin{theorem}[109]
+If $x$ is an ordinal and $y$ is an ordinal then $x \subset y$ or $y \subset x$.
+\end{theorem}
+
+% Theorem 110
+\begin{theorem}[110]
+If $x$ is an ordinal and $y$ is an ordinal then $x \in y$ or $y \in x$ or $x = y$.
 \end{theorem}
 
 \end{forthel}

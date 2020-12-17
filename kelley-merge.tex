@@ -1003,6 +1003,109 @@ If $x$ is an ordinal and $y$ is an ordinal then $x \subset y$ or $y \subset x$.
 If $x$ is an ordinal and $y$ is an ordinal then $x \in y$ or $y \in x$ or $x = y$.
 \end{theorem}
 
+% Theorem 111
+\begin{theorem}[111]
+If $x$ is an ordinal and $y \in x$ then $y$ is an ordinal.
+\end{theorem}
+
+% Definition 112
+\begin{definition}
+$R = \{x : x$ is an ordinal$\}$.
+\end{definition}
+
+% Theorem 113
+\begin{theorem}[113]
+$R$ is an ordinal and $R$ is not a set.
+\end{theorem}
+
+% Theorem 114
+\begin{theorem}[114]
+Each section of $R$ in $E$ is an ordinal.
+\end{theorem}
+
+% Definition 115
+\begin{definition}[115]
+An ordinal number is a class $x$ such that $x \in R$.
+\end{definition}
+
+% Definition 116
+\begin{definition}[116]
+$x < y$ iff $x \in y$.
+\end{definition}
+
+% Definition 117
+\begin{definition}[117]
+$x \leqq y$ iff $x \in y$ or $x = y$.
+\end{definition}
+
+% Theorem 118
+\begin{theorem}[118]
+If $x, y$ are ordinals then $x \leqq y$ iff $x \subset y$.
+\end{theorem}
+
+% Theorem 119
+\begin{theorem}[119]
+If $x$ is an ordinal then $x = \{y : y \in R$ and $y < x\}$.
+\end{theorem}
+
+% Theorem 120
+\begin{theorem}[120]
+If $x \subset R$ then $\bigcup x$ is an ordinal.
+\end{theorem}
+
+% Theorem 121
+\begin{theorem}[121]
+If $x \subset R$ and $x \neq 0$ then $\bigcap x \in x$.
+\end{theorem}
+
+% Definition 122
+\begin{definition}[122]
+$x + 1 = x \cup <x>$.
+\end{definition}
+
+% Theorem 123
+\begin{theorem}[123]
+If $x \in R$ then $x + 1$ minimizes $\{y : y \in R$ and $x < y\}$ in $E$.
+\end{theorem}
+
+% Theorem 124
+\begin{theorem}[124]
+If $x \in R$ then $\bigcup (x + 1) = x$.
+\end{theorem}
+
+Let $f$ denote a relation.
+% Definition 125
+\begin{definition}
+$f | x = f \cap (x \times \cal{U})$.
+\end{definition}
+
+% Unnumbered
+\begin{lemma}
+$f | x$ is a relation.
+\end{lemma}
+
+Let the restriction of $f$ to $x$ denote $f | x$.
+
+% Theorem 126
+\begin{theorem}[126]
+If $f$ is a map then $f | x$ is a map such that $\domain (f | x) = x \cap (\domain f)$
+and for each $y \in \domain (f | x)$ $(f | x)(y) = f(y)$.
+\end{theorem}
+
+% Theorem 127
+\begin{theorem}[127]
+If $f$ is a map such that $\domain f$ is an ordinal and for each $u \in \domain f$ $f(u) = g(f | u)$
+and $h$ is a map such that $\domain h$ is an ordinal and for each $v \in \domain h$ $h(u) = g(h | u)$
+then $h \subset f$ or $f \subset h$.
+\end{theorem}
+
+% Theorem 128
+\begin{theorem}[128]
+For each $g$ there exists a %unique
+map $f$ such that $\domain f$ is an ordinal
+and for each ordinal number $x$ $f(x) = g(f | x)$.
+\end{theorem}
+
 \end{forthel}
 
 \end{document}

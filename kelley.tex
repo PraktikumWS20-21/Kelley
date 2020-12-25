@@ -1027,7 +1027,7 @@ Each section of $R$ in $E$ is an ordinal.
 
 % Definition 115
 \begin{definition}[115]
-An ordinal number is a class $x$ such that $x \in R$.
+An ordinalnumber is a class $x$ such that $x \in R$.
 \end{definition}
 
 % Definition 116
@@ -1114,8 +1114,153 @@ then $h \subset f$ or $f \subset h$.
 \begin{theorem}[128]
 For each $g$ there exists a %unique
 map $f$ such that $\domain f$ is an ordinal
-and for each ordinal number $x$ $f(x) = g(f | x)$.
+and for each ordinalnumber $x$ $f(x) = g(f | x)$.
 \end{theorem}
+
+\end{forthel}
+
+\section{INTEGERS}
+\begin{forthel}
+
+% Axiom of infinity
+\begin{axiom}[VIII]
+There exists a set $y$ such that $0 \in y$ and if $x \in y$ then $x \cup <x> \in y$.
+\end{axiom}
+
+% Unnumbered
+\begin{lemma}
+0 is a set.
+\end{lemma}
+
+%[synonym integer/-s]
+% Definition 129
+\begin{definition}[129]
+An integer is an ordinal $x$ such that $E^{-1}$ wellorders $x$.
+\end{definition}
+
+% Definition 130
+\begin{definition}[130]
+$x$ maximizes $y$ in $E$ iff $x$ minimizes $y$ in $E^{-1}$.
+\end{definition}
+
+% Definition 131
+\begin{definition}[131]
+$\omega = \{$ object $x : x$ is an integer $\}.$
+\end{definition}
+
+% Theorem 132
+%\begin{theorem}[132]
+%Each element of an integer is an integer.
+%\end{theorem}
+
+% Theorem 133
+\begin{theorem}[133]
+If $y \in R$ and $x$ maximizes $y$ in $E$ then $y = x + 1$.
+\end{theorem}
+
+% Theorem 134
+\begin{theorem}[134]
+If $x \in \omega$ then $x + 1 \in \omega$.
+\end{theorem}
+
+% Theorem 135
+\begin{theorem}[135]
+$0 \in \omega$ and if $x \in \omega$ then $0 \neq x + 1$.
+\end{theorem}
+
+% Theorem 136
+\begin{theorem}[136]
+If $x, y$ are elements of $\omega$ and $x + 1 = y + 1$ then $x = y$.
+\end{theorem}
+
+% Theorem 137
+\begin{theorem}[137]
+If $x \subset \omega$ and $0 \in x$ and for each $u$ if $u \in x$ then $u + 1 \in x$ then $x = \omega$.
+\end{theorem}
+
+% Theorem 138
+\begin{theorem}[138]
+$\omega \in R$.
+\end{theorem}
+
+\end{forthel}
+
+\section{THE CHOICE AXIOM}
+\begin{forthel}
+
+% Definition 139
+\begin{definition}
+A choicefunction is a map $c$ such that for each element $x$ of $\domain c$ $c(x) \in x$.
+\end{definition}
+
+% Axiom of choice
+\begin{axiom}[IX]
+There is a choicefunction $c$ such that $\domain c = \cal{U} \sim 0$.
+\end{axiom}
+
+% Theorem 140
+\begin{theorem}[140]
+If $x$ is a set then there exists a oneonefunction $f$ such that $\domain f = x$ and $\domain f$ is an ordinalnumber.
+\end{theorem}
+
+[synonym nest/-s]
+% Definition 141
+\begin{definition}[141]
+A nest is a set $n$ such that for each set $x, y$ if $x, y \in n$ then $x \subset y$ or $y \subset x$.
+\end{definition}
+
+Let $n, m$ denote sets.
+% Theorem 142
+\begin{theorem}[142]
+If $n$ is a nest and each element of $n$ is a nest then $\bigcup n$ is a nest.
+\end{theorem}
+
+% Theorem 143
+\begin{theorem}[143]
+If $x$ is a set then there is a nest $n$ such that $n \subset x$ and (if $m$ is a nest and $m \subset x$ and $n \subset m$ then $m = n$).
+\end{theorem}
+
+\end{forthel}
+
+\section{CARDINAL NUMBERS}
+\begin{forthel}
+
+% Definition 144
+\begin{definition}[144]
+$x \approx y$ iff there exists a oneonefunction $f$ such that $\domain f = x$ and $\range f = y$.
+\end{definition}
+
+% Theorem 145
+\begin{theorem}[145]
+$x \approx x$.
+\end{theorem}
+
+% Theorem 146
+\begin{theorem}[146]
+If $x \approx y$ then $y \approx x$.
+\end{theorem}
+
+% Theorem 147
+\begin{theorem}[147]
+If $x \approx y$ and $y \approx z$ then $x \approx z$.
+\end{theorem}
+
+% Definition 148
+\begin{definition}[148]
+A cardinalnumber is an ordinalnumber $x$ such that for each set $y$ if $y \in R$ and $y < x$ then not ($x \approx y$).
+\end{definition}
+
+% Definition 149
+\begin{definition}[149]
+$C = \{$ set $x : x$ is a cardinalnumber $\}$.
+\end{definition}
+
+% Theorem 150
+\begin{theorem}[150]
+$E$ wellorders $C$.
+\end{theorem}
+
+% Definition 151
 
 \end{forthel}
 

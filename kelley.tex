@@ -1322,7 +1322,7 @@ If $f$ is a map and $f$ is a set then $P(\range f) \leqq P(\domain f)$.
 
 % Theorem 161
 \begin{theorem}[161]
-If $x$ is a set then $P(x) < P(2^x)$.
+If $x$ is a set then $P(x) < P(2^{x})$.
 \end{theorem}
 
 % Theorem 162
@@ -1348,7 +1348,7 @@ $\omega \in C$.
 % Definition 166
 \begin{definition}[166]
 $x$ is finite iff $P(x) \in \omega$.
-\end{theorem}
+\end{definition}
 
 % Theorem 167
 \begin{theorem}[167]
@@ -1372,7 +1372,7 @@ If $x, y$ are finite then $x \times y$ is finite.
 
 % Theorem 171
 \begin{theorem}[171]
-If $x$ is finite then $2^x$ is finite.
+If $x$ is finite then $2^{x}$ is finite.
 \end{theorem}
 
 % Theorem 172
@@ -1395,11 +1395,31 @@ If $x \in R \sim \omega$ then $P(x + 1) = P(x)$.
 $\max[x,y] = x \cup y$.
 \end{definition}
 
-% Definition 176
-\begin{definition}[176]
-$\ll = \{$ object $z :$ for some $[u,v], [x,y]$ such that $[u,v] \in (R \times R)$ and $[x,y] \in (R \times R)$ and $z = [[u,v],[x,y]]$ and ($\max[u,v] < \max[x,y]$
-or ($\max[u,v] = \max[x,y]$ and $u < x$) or ($\max[u,v] = \max[x,y]$ and $u = x$ and $v < y))\}$.
+% Assisting definition
+\begin{definition}
+$[u,v] \ll [x,y]$ iff $\max[u,v] < \max[x,y]$ or ($\max[u,v] = \max[x,y]$ and $u < x$)
+or ($\max[u,v] = \max[x,y]$ and $u = x$ and $v < y$).
 \end{definition}
+
+% Assisting
+\begin{definition}
+$\ll = \{$object $z :$ for some sets $u,v,x,y$ ($[u,v] \ll [x,y]$ and $z = [[u,v],[x,y]])\}$.
+\end{definition}
+
+% Assisting
+\begin{lemma}
+$\ll$ is a relation.
+\end{lemma}
+
+% Definition 176
+%\begin{definition}[176]
+%$\ll = \{$set $z : z$ is an ordinal\}$. %and $ ([u,v]) \in (R \times R)$ and $([x,y]) \in (R \times R)$ and ($\max[u,v] < \max[x,y]$
+%or ($\max[u,v] = \max[x,y]$ and $u < x$) or ($\max[u,v] = \max[x,y]$ and $u = x$ and $v < y))\}$.
+%\end{definition}
+%\begin{definition}[176]
+%	$\ll = \{u, v, x, y:$ for some $u, v, x, y$ such that $[u,v] \in (R \times R)$ and
+%	$[x,y] \in (R \times R)$ and $u$ is semismall in $v$ to $x$ and $y$\}$.
+%\end{definition}
 
 % Theorem 177
 \begin{theorem}[177]
@@ -1409,7 +1429,7 @@ $\ll$ wellorders $R \times R$.
 % Theorem 178
 \begin{theorem}[178]
 If $[u,v] \ll [x,y]$ then $[u,v] \in ((\max[x,y] + 1) \times (\max[x,y] + 1))$.
-\end{theorem}[178]
+\end{theorem}
 
 % Theorem 179
 \begin{theorem}[179]
@@ -1420,6 +1440,11 @@ If $x \in C \sim \omega$ then $P(x \times x) = x$.
 \begin{theorem}[180]
 If $x, y$ are elements of $C$ and ($x \notin \omega$ or $y \notin \omega$) then $P(x \times y) = \max[P(x),P(y)]$.
 \end{theorem}
+
+% Assisting
+\begin{definition}
+$< = \{$object $z :$ for some sets $x,y$ $(x < y$ and $z = [x,y])\}$.
+\end{definition}
 
 % Theorem 181
 \begin{theorem}

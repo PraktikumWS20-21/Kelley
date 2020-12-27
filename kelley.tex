@@ -1261,6 +1261,171 @@ $E$ wellorders $C$.
 \end{theorem}
 
 % Definition 151
+\begin{definition}[151]
+$P = \{[x,y] : x \approx y$ and $y \in C\}$.
+\end{definition}
+
+% Theorem 152a
+\begin{theorem}[152a]
+$P$ is a map.
+\end{theorem}
+
+% Theorem 152b
+\begin{theorem}[152b]
+$\domain P = \cal{U}$.
+\end{theorem}
+
+% Theorem 152c
+\begin{theorem}[152c]
+$\range P = C$.
+\end{theorem}
+
+% Theorem 153
+\begin{theorem}[153]
+If $x$ is a set then $P(x) \approx x$.
+\end{theorem}
+
+% Theorem 154
+\begin{theorem}[154]
+If $x, y$ are sets then $x \approx y$ iff $P(x) = P(y)$.
+\end{theorem}
+
+% Theorem 155
+\begin{theorem}[155]
+$P(P(x)) = P(x)$.
+\end{theorem}
+
+% Theorem 156
+\begin{theorem}[156]
+$x \in C$ iff $x$ is a set and $P(x) = x$.
+\end{theorem}
+
+% Theorem 157
+\begin{theorem}[157]
+If $y \in R$ and $x \subset y$ then $P(x) \leqq y$.
+\end{theorem}
+
+% Theorem 158
+\begin{theorem}[158]
+If $y$ is a set and $x \subset y$ then $P(x) \leqq P(y)$.
+\end{theorem}
+
+% Theorem 159
+\begin{theorem}[159]
+If $x, y, u, v$ are sets and $u \subset x$ and $v \subset y$ and $x \approx v$ and $y \approx u$ then $x \approx y$.
+\end{theorem}
+
+% Theorem 160
+\begin{theorem}[160]
+If $f$ is a map and $f$ is a set then $P(\range f) \leqq P(\domain f)$.
+\end{theorem}
+
+% Theorem 161
+\begin{theorem}[161]
+If $x$ is a set then $P(x) < P(2^x)$.
+\end{theorem}
+
+% Theorem 162
+\begin{theorem}[162]
+$C$ is not a set.
+\end{theorem}
+
+% Theorem 163
+\begin{theorem}[163]
+If $x \in \omega$ and $y \in \omega$ and $x + 1 \approx y + 1$ then $x \approx y$.
+\end{theorem}
+
+% Theorem 164
+\begin{theorem}
+$\omega \subset C$.
+\end{theorem}
+
+% Theorem 165
+\begin{theorem}[165]
+$\omega \in C$.
+\end{theorem}
+
+% Definition 166
+\begin{definition}[166]
+$x$ is finite iff $P(x) \in \omega$.
+\end{theorem}
+
+% Theorem 167
+\begin{theorem}[167]
+$x$ is finite iff there is a relation $r$ such that $r$ wellorders $x$ and $r^{-1}$ wellorders $x$.
+\end{theorem}
+
+% Theorem 168
+\begin{theorem}[168]
+If $x, y$ are finite then $x \cup y$ is finite.
+\end{theorem}
+
+% Theorem 169
+\begin{theorem}[169]
+If $x$ is finite and each element of $x$ is finite then $\bigcup x$ is finite.
+\end{theorem}
+
+% Theorem 170
+\begin{theorem}[170]
+If $x, y$ are finite then $x \times y$ is finite.
+\end{theorem}
+
+% Theorem 171
+\begin{theorem}[171]
+If $x$ is finite then $2^x$ is finite.
+\end{theorem}
+
+% Theorem 172
+\begin{theorem}[172]
+If $x$ is finite and $y \subset x$ and $P(y) = P(x)$ then $x = y$.
+\end{theorem}
+
+% Theorem 173
+\begin{theorem}[173]
+If $x$ is a set and $x$ is not finite then there is a set $y$ such that $y \subset x$ and $y \neq x$ and $x \approx y$.
+\end{theorem}
+
+% Theorem 174
+\begin{theorem}[174]
+If $x \in R \sim \omega$ then $P(x + 1) = P(x)$.
+\end{theorem}
+
+% Definition 175
+\begin{definition}[175]
+$\max[x,y] = x \cup y$.
+\end{definition}
+
+% Definition 176
+\begin{definition}[176]
+$\ll = \{$ object $z :$ for some $[u,v], [x,y]$ such that $[u,v] \in (R \times R)$ and $[x,y] \in (R \times R)$ and $z = [[u,v],[x,y]]$ and ($\max[u,v] < \max[x,y]$
+or ($\max[u,v] = \max[x,y]$ and $u < x$) or ($\max[u,v] = \max[x,y]$ and $u = x$ and $v < y))\}$.
+\end{definition}
+
+% Theorem 177
+\begin{theorem}[177]
+$\ll$ wellorders $R \times R$.
+\end{theorem}
+
+% Theorem 178
+\begin{theorem}[178]
+If $[u,v] \ll [x,y]$ then $[u,v] \in ((\max[x,y] + 1) \times (\max[x,y] + 1))$.
+\end{theorem}[178]
+
+% Theorem 179
+\begin{theorem}[179]
+If $x \in C \sim \omega$ then $P(x \times x) = x$.
+\end{theorem}
+
+% Theorem 180
+\begin{theorem}[180]
+If $x, y$ are elements of $C$ and ($x \notin \omega$ or $y \notin \omega$) then $P(x \times y) = \max[P(x),P(y)]$.
+\end{theorem}
+
+% Theorem 181
+\begin{theorem}
+There is a %unique
+map $f$ such that $f$ orderpreserves $<$ and $<$ and $\domain f = R$ and $\range f = C \sim \omega$.
+\end{theorem}
 
 \end{forthel}
 

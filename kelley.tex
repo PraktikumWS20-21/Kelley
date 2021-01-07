@@ -421,7 +421,7 @@ If x is not a set or y is not a set then
 %\section{ORDERED PAIRS: RELATIONS}
 
 % Definition 48
-\begin{definition}[48] [x,y] = \{<x>,<x,y>\}.\end{definition}
+\begin{definition}[48] [x,y] = <<x>,<x,y>>.\end{definition}
 Let the ordered pair of x and y stand for [x,y].
 
 % Theorem 49a
@@ -447,7 +447,7 @@ If x and y are sets then
 
 % Theorem 50b
 \begin{theorem}[50b]
-If x is not a set or y is not a set then
+If (x is a class and x is not a set) or (y is a class and y is not a set) then
   \bigcup \bigcap [x,y] = 0 and
   \bigcap \bigcap [x,y] = \cal{U} and
   \bigcup \bigcup [x,y] = \cal{U} and
@@ -468,6 +468,7 @@ Let the second coordinate of z stand for 2^{nd} coord z.
 2^{nd} coord \cal{U} = \cal{U}.
 \end{theorem}
 
+[prove off]
 % Theorem 54a
 \begin{theorem}[54a]
 If x and y are sets 
@@ -483,7 +484,7 @@ Let x and y be sets.
 
 % Theorem 54b
 \begin{theorem}[54b]
-If x is not a set or y is not a set then
+If (x is a class and x is not a set) or (y is a class and y is not a set) then
 1^{st} coord [x,y] = \cal{U} and 
 2^{nd} coord [x,y] = \cal{U}.
 \end{theorem}
@@ -505,29 +506,27 @@ x = u and y = v.
 
 % Definition 56
 \begin{definition}[56] 
-A relation is a class r such that 
-%A class r is a relation if and only if 
-for each element z of r
-there is x and y such that z = [x,y].
+A relation is a class r such that for each element z of r there exist x and y such that z = [x,y].
 \end{definition}
 
 Let r, s, t stand for relations.
 
 % Definition 57
 \begin{definition}[57]
-r \circ s = {[x,z] | x, z are objects and there exists an object b 
-such that [x,b] \in s and [b,z] \in r}. 
+r \circ s = {class u | for some $x,y,z$ $u = [x,z]$ and [x,y] \in s and [x,z] \in s and [y,z] \in r}. 
 \end{definition}
 
+[prove off]
 % Theorem 58
 \begin{theorem}[58]
 (r \circ s) \circ t = r \circ (s \circ t).
 \end{theorem}
-\begin{proof}
-Let r,s,t be relations.
-(r \circ s) \circ t \subset r \circ (s \circ t) and
-r \circ (s \circ t) \subset (r \circ s) \circ t.
-\end{proof}
+%\begin{proof}
+%Let r,s,t be relations.
+%(r \circ s) \circ t \subset r \circ (s \circ t) and
+%r \circ (s \circ t) \subset (r \circ s) \circ t.
+%\end{proof}
+[/prove]
 
 % Theorem 59a
 \begin{theorem}[59a]
@@ -545,7 +544,7 @@ r \circ (s \cap t) \subset (r \circ s) \cap (r \circ t).
 
 % Definition 60
 \begin{definition}[60]
-r^{-1} = {[b,a] | a, b are objects and [a,b] \in r}.
+r^{-1} = {class s | for some a,b s = [b,a] and [a,b] \in r}.
 \end{definition}
 Let the relation inverse to r stand for r^{-1}.
 
@@ -574,26 +573,26 @@ Assume r \subset s. Then r^{-1} \subset s^{-1}.
 \begin{lemma}[62b]
 (r \circ s)^{-1} \subset (s^{-1}) \circ (r^{-1}).
 \end{lemma}
-\begin{proof}
-Let u \in (r \circ s)^{-1}.
-Take c and a such that u = [c,a].
-Take an object b such that ([a,b] \in s and [b,c] \in r).
-Indeed [a,c] \in r \circ s.
-[b,a] \in s^{-1} and [c,b] \in r^{-1}.
-Then [c,a] \in (s^{-1}) \circ (r^{-1}).
-\end{proof}
+%\begin{proof}
+%Let u \in (r \circ s)^{-1}.
+%Take c and a such that u = [c,a].
+%Take an object b such that ([a,b] \in s and [b,c] \in r).
+%Indeed [a,c] \in r \circ s.
+%[b,a] \in s^{-1} and [c,b] \in r^{-1}.
+%Then [c,a] \in (s^{-1}) \circ (r^{-1}).
+%\end{proof}
 
 % Unnumbered
 \begin{lemma}
 (s^{-1}) \circ (r^{-1}) \subset (r \circ s)^{-1}.
 \end{lemma}
-\begin{proof}
-Let r,s be relations.
-((s^{-1}) \circ (r^{-1}))^{-1} \subset ((r^{-1})^{-1}) \circ ((s^{-1})^{-1}) (by 62b).
-((s^{-1}) \circ (r^{-1}))^{-1} \subset r \circ s (by 61).
-(((s^{-1}) \circ (r^{-1}))^{-1})^{-1} \subset (r \circ s)^{-1} (by 62a).
-(s^{-1}) \circ (r^{-1}) \subset (r \circ s)^{-1} (by 61).
-\end{proof}
+%\begin{proof}
+%Let r,s be relations.
+%((s^{-1}) \circ (r^{-1}))^{-1} \subset ((r^{-1})^{-1}) \circ ((s^{-1})^{-1}) (by 62b).
+%((s^{-1}) \circ (r^{-1}))^{-1} \subset r \circ s (by 61).
+%(((s^{-1}) \circ (r^{-1}))^{-1})^{-1} \subset (r \circ s)^{-1} (by 62a).
+%(s^{-1}) \circ (r^{-1}) \subset (r \circ s)^{-1} (by 61).
+%\end{proof}
 
 % Theorem 62
 \begin{theorem}[62]
@@ -627,12 +626,12 @@ If f, g are maps then f \circ g is a map.
 
 % Definition 65
 \begin{definition}[65]
-\domain x = \{object u |  there exists an object v such that [u,v] \in x\}.
+\domain x = \{class u | for some v [u,v] \in x\}.
 \end{definition}
 
 % Definition 66
 \begin{definition}[66]
-\range x = \{object v |  there exists an object u such that [u,v] \in x\}.
+\range x = \{class v | for some u [u,v] \in x\}.
 \end{definition}
 
 % Theorem 67
@@ -645,10 +644,19 @@ If x \in \cal{U} then (x,0), (0,x) \in \cal{U}.
 x \in \domain \cal{U} and x \in \range \cal{U}.
 \end{proof}
 
-% Signature 68
+\begin{definition}
+%Let f be a map. Let u \in \domain f.
+%\begin{definition}
+%subdomain u = \{class v : [u,v] \in f\}.
+The subvalue of f at u is a class setx such that setx = \{class v : [u,v] \in f\}.
+\end{definition}
+
+% Definition 68
 \begin{signature}[68]
-Let f be a map. Let u \in \domain f.
-The value of f at u is an object v such that [u,v] \in f.
+%Let f be a map. Let u \in \domain f.
+%The value of f at u is an object v such that [u,v] \in f.
+%The subvalue of f at u is a class setx such that setx = \{class v : [u,v] \in f\}.
+The value of f at u is the intersection of the subvalue of f at u.
 \end{signature}
 Let f(u) stand for the value of f at u.
 
@@ -673,7 +681,7 @@ If x \in \domain f then f(x) \in \cal{U}.
 
 % Theorem 70
 \begin{theorem}[70]
-Let f be a map. Then f = \{[x,y] : y = f(x)\}.
+Let f be a map. Then f = \{class u : u = [x,y] and y = f(x)\}.
 %Then f = {[u,f(u)] : u \in \domain f}.
 \end{theorem}
 
@@ -683,22 +691,22 @@ Assume \domain f = \domain g and for all elements u of \domain f
 %u \in \domain f 
 f(u) = g(u). Then f = g.
 \end{theorem}
-\begin{proof}
-Let us show that f \subset g.
-\begin{proof}
-Let w \in f. 
-Then w \in g. 
-\end{proof}
-%end.
-Let us show that g \subset f.
-\begin{proof}
-Let w \in g.  
-Take objects u, v such that w=[u,v].
-u \in \domain g and v = g(u).
-Then u \in \domain f and v = f(u).
-Then w \in f. 
-\end{proof} %end.
-\end{proof}
+%\begin{proof}
+%Let us show that f \subset g.
+%\begin{proof}
+%Let w \in f. 
+%Then w \in g. 
+%\end{proof}
+%%end.
+%Let us show that g \subset f.
+%\begin{proof}
+%Let w \in g.  
+%Take objects u, v such that w=[u,v].
+%u \in \domain g and v = g(u).
+%Then u \in \domain f and v = f(u).
+%Then w \in f. 
+%\end{proof} %end.
+%\end{proof}
 
 % Axiom of substitution
 \begin{axiom}[V]
@@ -724,21 +732,21 @@ If u,v are sets then <u> \times <v> is a set.
 \begin{theorem}[74]
 If x,y are sets then x \times y is a set.
 \end{theorem}
-\begin{proof}
-Let f be a map such that \domain f = x and
-f(u) = <u> \times y for every element u of x.
-\range f is a set.
-\range f = \{class z : for some class u (u \in x and z = (<u> \times y))\}.
-Consequently \bigcup \range f = x \times y.
-\end{proof}
+%\begin{proof}
+%Let f be a map such that \domain f = x and
+%f(u) = <u> \times y for every element u of x.
+%\range f is a set.
+%\range f = \{class z : for some class u (u \in x and z = (<u> \times y))\}.
+%Consequently \bigcup \range f = x \times y.
+%\end{proof}
 
 % Theorem 75
 \begin{theorem}[75]
 If f is a map and \domain f is a set 
 then f is a set.\end{theorem}
-\begin{proof}
-f \subset (\domain f \times \range f).
-\end{proof}
+%\begin{proof}
+%f \subset (\domain f \times \range f).
+%\end{proof}
 
 % Definition 76
 \begin{definition}[76]
@@ -749,14 +757,14 @@ y^{x} = \{map f | \domain f = x and \range f \subset y\}.
 \begin{theorem}[77]
 If x,y are sets then y^{x} is a set.
 \end{theorem}
-\begin{proof}
-Let f be map.
-If f \in y^{x} then f \subset x \times y.
-f \in 2^{x \times y} (by 38).
-2^{x \times y} is a set.
-y^{x} \subset 2^{x \times y}.
-y^{x} is a set.
-\end{proof}
+%\begin{proof}
+%Let f be map.
+%If f \in y^{x} then f \subset x \times y.
+%f \in 2^{x \times y} (by 38).
+%2^{x \times y} is a set.
+%y^{x} \subset 2^{x \times y}.
+%y^{x} is a set.
+%\end{proof}
 
 % Definition 78
 \begin{definition}[78]
@@ -804,48 +812,48 @@ r is asymmetric in x iff for all elements u,v of x if u (r) v then not v (r) u.
 
 Let $x$ denote a class.
 \begin{definition}[86]
-z minimizes x in r if and only if (z \in x and for each element y of x not(y (r) z)).
+z minimizes x in r if and only if (z \in x and for each element y of x not (y (r) z)).
 \end{definition}
 
 [synonym wellorder/-s]
 % Definition 87
 \begin{definition}[87]
 r wellorders x if and only if r connects x and for each subclass y of x such that y \neq 0
-there exists an object z such that z minimizes y in r.
+there exists a class z such that z minimizes y in r.
 \end{definition}
 
 % Theorem 88a
 \begin{theorem}[88a]
 If r wellorders x then r is asymmetric in x.
 \end{theorem}
-\begin{proof}
-Assume r wellorders x.
-Let u \in x and v \in x.
-Assume u (r) v and v (r) u.
-Then <u,v> \subset x.
-Take an object z such that z minimizes <u,v> in r.
-z = u or z = v.
-Then not v (r) u or not u (r) v.
-Contradiction. 
-Then r is asymmetric in x.
-\end{proof}
+%\begin{proof}
+%Assume r wellorders x.
+%Let u \in x and v \in x.
+%Assume u (r) v and v (r) u.
+%Then <u,v> \subset x.
+%Take an object z such that z minimizes <u,v> in r.
+%z = u or z = v.
+%Then not v (r) u or not u (r) v.
+%Contradiction. 
+%Then r is asymmetric in x.
+%\end{proof}
 
 % Theorem 88b
 \begin{theorem}[88b]
 If r wellorders x then r is transitive in x.
 \end{theorem}
-\begin{proof}
-Assume r wellorders x.
-Assume that r is not transitive in x.
-Take elements u,v,w of x such that 
-u (r) v and v (r) w and not u (r) w.
-u \neq w. Indeed r is asymmetric in x.
-w (r) u.
-There is no object a such that a minimizes (<u> \cup <v>) \cup <w> in r.
-(<u> \cup <v>) \cup <w> \subset x.
-Take an object b such that b minimizes (<u> \cup <v>) \cup <w> in r.
-Contradiction.
-\end{proof}
+%\begin{proof}
+%Assume r wellorders x.
+%Assume that r is not transitive in x.
+%Take elements u,v,w of x such that 
+%u (r) v and v (r) w and not u (r) w.
+%u \neq w. Indeed r is asymmetric in x.
+%w (r) u.
+%There is no object a such that a minimizes (<u> \cup <v>) \cup <w> in r.
+%(<u> \cup <v>) \cup <w> \subset x.
+%Take an object b such that b minimizes (<u> \cup <v>) \cup <w> in r.
+%Contradiction.
+%\end{proof}
 
 [synonym section/-s]
 % Definition 89
@@ -864,10 +872,10 @@ If z \neq 0 and every element of z is a section of x in r then \bigcup z and \bi
 If y is a section of x in r and y \neq x then
 y = \{object u | u \in x and u (r) v\} for some element v of x.
 \end{theorem}
-\begin{proof}
-Let y be a section of x in r and y \neq x.
-Take an object v such that v minimizes x in r and x (r) y.
-\end{proof}
+%\begin{proof}
+%Let y be a section of x in r and y \neq x.
+%Take an object v such that v minimizes x in r and x (r) y.
+%\end{proof}
 
 % Theorem 92
 \begin{theorem}[92]
@@ -956,7 +964,7 @@ Not ($x \in y$ and $y \in x$).
 
 % Definition 103
 \begin{definition}[103]
-$E = \{[x,y] : x \in y\}$.
+$E = \{class z : for some classes x,y z = [x,y] and x \in y\}$.
 \end{definition}
 
 % Unnumbered

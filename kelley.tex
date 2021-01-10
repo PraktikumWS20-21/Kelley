@@ -22,6 +22,8 @@
 
 % This file checks in ~ 1 min on my laptop.
 
+
+
 \documentclass[a4paper,draft]{amsproc}
 \title{\textbf{Kelley}}
 
@@ -508,11 +510,19 @@ A relation is a class r such that for each element z of r there exist x and y su
 
 Let r, s, t stand for relations.
 
+[/prove]
 % Definition 57
 \begin{definition}[57]
-r \circ s = {class u | for some $x,y,z$ $u = [x,z]$ and [x,y] \in s and [x,z] \in s and [y,z] \in r}. 
+%r \circ s = \{[x,z] : for some class y $[x,y] \in s$ and $[y,z] \in r\}$. 
+r \circ s = \{object u : for some x,z u = [x,z] and for some y [x,y] \in s and [y,z] \in r\}.
 \end{definition}
 
+% Assisting
+\begin{lemma}
+r \circ s is a relation.
+\end{lemma}
+
+[prove off]
 % Theorem 58
 \begin{theorem}[58]
 (r \circ s) \circ t = r \circ (s \circ t).
@@ -522,6 +532,7 @@ r \circ s = {class u | for some $x,y,z$ $u = [x,z]$ and [x,y] \in s and [x,z] \i
 %(r \circ s) \circ t \subset r \circ (s \circ t) and
 %r \circ (s \circ t) \subset (r \circ s) \circ t.
 %\end{proof}
+[/prove]
 
 % Theorem 59a
 \begin{theorem}[59a]
@@ -539,7 +550,7 @@ r \circ (s \cap t) \subset (r \circ s) \cap (r \circ t).
 
 % Definition 60
 \begin{definition}[60]
-r^{-1} = {class s | for some a,b s = [b,a] and [a,b] \in r}.
+r^{-1} = \{class s | for some a,b s = [b,a] and [a,b] \in r\}.
 \end{definition}
 Let the relation inverse to r stand for r^{-1}.
 
@@ -552,10 +563,10 @@ r^{-1} is a relation.
 \begin{theorem}[61]
 (r^{-1})^{-1} = r.
 \end{theorem}
-\begin{proof}
-r \subset (r^{-1})^{-1}.
-(r^{-1})^{-1} \subset r.
-\end{proof}
+%\begin{proof}
+%r \subset (r^{-1})^{-1}.
+%(r^{-1})^{-1} \subset r.
+%\end{proof}
 
 % Lemma 62a
 \begin{lemma}[62a]
@@ -601,7 +612,6 @@ Let r,s be relations.
 
 % Since "function" is predefined in SAD3, we use the word "map" instead.
 
-
 [synonym map/-s]
 % Definition 63
 \begin{definition}[63]
@@ -615,6 +625,7 @@ Let f, g stand for maps.
 \begin{theorem}[64]
 If f, g are maps then f \circ g is a map.
 \end{theorem}
+
 
 % Definition 65
 \begin{definition}[65]
@@ -630,11 +641,11 @@ If f, g are maps then f \circ g is a map.
 \begin{theorem}[67]
 \domain \cal{U} = \cal{U} and \range \cal{U} = \cal{U}.
 \end{theorem}
-\begin{proof}
-Let x be a class.
-If x \in \cal{U} then (x,0), (0,x) \in \cal{U}.
-x \in \domain \cal{U} and x \in \range \cal{U}.
-\end{proof}
+%\begin{proof}
+%Let x be a class.
+%If x \in \cal{U} then (x,0), (0,x) \in \cal{U}.
+%x \in \domain \cal{U} and x \in \range \cal{U}.
+%\end{proof}
 
 \begin{definition}
 %Let f be a map. Let u \in \domain f.
@@ -671,18 +682,17 @@ If x \in \domain f then f(x) \in \cal{U}.
 %and f(x) is a set (by 35).
 %\end{proof}
 
+	[prove off]
 % Theorem 70
 \begin{theorem}[70]
-Let f be a map. Then f = \{class u : u = [x,y] and y = f(x)\}.
+If f is a map then f = \{class u : u = [x,y] and y = f(x)\}.
 %Then f = {[u,f(u)] : u \in \domain f}.
 \end{theorem}
 
 % Theorem 71
-\begin{theorem}[71]
-Assume \domain f = \domain g and for all elements u of \domain f
-%u \in \domain f 
-f(u) = g(u). Then f = g.
-\end{theorem}
+%\begin{theorem}[71]
+%If \domain f = \domain g and for each element u of \domain f f(u) = g(u) then f = g.
+%\end{theorem}
 %\begin{proof}
 %Let us show that f \subset g.
 %\begin{proof}

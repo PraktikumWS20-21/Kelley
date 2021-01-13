@@ -644,7 +644,7 @@ Let r,s be relations.
 [synonym map/-s]
 % Definition 63
 \begin{definition}[63]
-A map is a relation f such that for each a, b, c
+A map is a relation f such that for each class a, b, c
 if [a,b] \in f and [a,c] \in f then b = c.
 \end{definition}
 
@@ -676,22 +676,21 @@ If f, g are maps then f \circ g is a map.
 %x \in \domain \cal{U} and x \in \range \cal{U}.
 %\end{proof}
 
-\begin{definition}
+%\begin{definition}
 %Let f be a map. Let u \in \domain f.
 %\begin{definition}
 %subdomain u = \{class v : [u,v] \in f\}.
-The subvalue of f at u is a class setx such that setx = \{class v : [u,v] \in f\}.
-\end{definition}
+%The subvalue of f at u is a class setx such that setx = \{class v : [u,v] \in f\}.
+%\end{definition}
 
 % Definition 68
 \begin{signature}[68]
-%Let f be a map. Let u \in \domain f.
-%The value of f at u is an object v such that [u,v] \in f.
+Let f be a map. %Let u \in \domain f.
+The value of f at u is a class v such that [u,v] \in f.
 %The subvalue of f at u is a class setx such that setx = \{class v : [u,v] \in f\}.
-The value of f at u is the intersection of the subvalue of f at u.
+%The value of f at u is the intersection of the subvalue of f at u.
 \end{signature}
 Let f(u) stand for the value of f at u.
-
 
 % Theorem 69
 \begin{theorem}[69a]
@@ -889,8 +888,8 @@ If r wellorders x then r is transitive in x.
 [synonym section/-s]
 % Definition 89
 \begin{definition}[89]
-A section of x in r is a set y such that y subset x and r wellorders x
-and for each objects u,v such that u \in x and v \in y and u (r) v u \in y.
+A section of x in r is a class y such that y subset x and r wellorders x
+and for each classes u,v such that u \in x and v \in y and u (r) v u \in y.
 \end{definition}
 
 % Theorem 90
@@ -900,8 +899,8 @@ If z \neq 0 and every element of z is a section of x in r then \bigcup z and \bi
 
 % Theorem 91
 \begin{theorem}[91]
-If y is a section of x in r and y \neq x then
-y = \{object u | u \in x and u (r) v\} for some element v of x.
+If y is a section of x in r and y \neq x then there exists a class v such that v in x and 
+y = \{class u | u \in x and u (r) v\}.
 \end{theorem}
 %\begin{proof}
 %Let y be a section of x in r and y \neq x.
@@ -980,7 +979,7 @@ and \domain f = x.
 Let $x, y$ denote classes.
 % AXIOM VII: Axiom of regularity
 \begin{axiom}
-If $x \neq 0$ then there is an element $y$ of $x$ such that $x \cap y = 0$.
+If $x \neq 0$ then there is an element $y$ of $x$ such that y is a class and $x \cap y = 0$.
 \end{axiom}
 
 % Theorem 101
@@ -995,8 +994,13 @@ Not ($x \in y$ and $y \in x$).
 
 % Definition 103
 \begin{definition}[103]
-$E = \{class z : for some classes x,y z = [x,y] and x \in y\}$.
+$E = \{[x,y] | x,y$ are classes and $x \in y\}$.
 \end{definition}
+
+% Unnumbered
+\begin{lemma}
+E is a relation.
+\end{lemma}
 
 % Unnumbered
 \begin{lemma}
@@ -1012,11 +1016,6 @@ $E$ is not a set.
 \begin{definition}[105]
 A fullclass is a class $x$ such that each element of $x$ is contained in $x$.
 \end{definition}
-
-% Unnumbered
-\begin{lemma}
-$x$ is a fullclass iff each element of each element of $x$ is an element of $x$.
-\end{lemma}
 
 [synonym ordinal/-s]
 % Definition 106
@@ -1106,11 +1105,12 @@ $x + 1 = x \cup <x>$.
 
 %Let $cy$ denote $\{$ set $y : y \in R$ and $x < y\}$.
 % Theorem 123
-%\begin{theorem}[123]
+\begin{theorem}[123]
 %Assume that $cy$ is equal to \{$ set $y : y \in R$ and $x < y\}$.
-%If $x \in R$ then $x + 1$ minimizes $\{$ set $y : y \in R$ and $x < y\}$ in $E$.
+If $x \in R$ then there exists a class z such that z = \{class y : y \in R and x < y\} and
+$x + 1$ minimizes z in $E$.
 %If $x \in R$ then $x + 1$ minimizes $cy$ in $E$.
-%\end{theorem}
+\end{theorem}
 
 % Theorem 124
 \begin{theorem}[124]
@@ -1171,7 +1171,12 @@ There exists a set $y$ such that $0 \in y$ and if $x \in y$ then $x \cup <x> \in
 0 is a set.
 \end{lemma}
 
-%[synonym integer/-s]
+\begin{lemma}
+E^{-1} is a relation.
+\end{lemma}
+
+
+[synonym integer/-s]
 % Definition 129
 \begin{definition}[129]
 An integer is an ordinal $x$ such that $E^{-1}$ wellorders $x$.
@@ -1229,7 +1234,7 @@ $\omega \in R$.
 
 % Definition 139
 \begin{definition}
-A choicefunction is a map $c$ such that for each element $x$ of $\domain c$ $c(x) \in x$.
+A choicefunction is a map $c$ such that for each class $x$ if $x \in \domain c$ then $c(x) \in x$.
 \end{definition}
 
 % Axiom of choice
@@ -1266,6 +1271,7 @@ If $x$ is a set then there is a nest $n$ such that $n \subset x$ and (if $m$ is 
 
 % Definition 144
 \begin{definition}[144]
+Assume that x,y are classes.
 $x \approx y$ iff there exists a oneonefunction $f$ such that $\domain f = x$ and $\range f = y$.
 \end{definition}
 
@@ -1301,7 +1307,7 @@ $E$ wellorders $C$.
 
 % Definition 151
 \begin{definition}[151]
-$P = \{[x,y] : x \approx y$ and $y \in C\}$.
+$P = \{[x,y] : x,y$ are classes and $x \approx y$ and $y \in C\}$.
 \end{definition}
 
 % Theorem 152a
@@ -1321,7 +1327,7 @@ $\range P = C$.
 
 % Theorem 153
 \begin{theorem}[153]
-If $x$ is a set then $P(x) \approx x$.
+If $x$ is a set then there exists a class y such that P(x) = y and $y \approx x$.
 \end{theorem}
 
 % Theorem 154
@@ -1384,6 +1390,7 @@ $\omega \subset C$.
 $\omega \in C$.
 \end{theorem}
 
+Let x denote a class.
 % Definition 166
 \begin{definition}[166]
 $x$ is finite iff $P(x) \in \omega$.
@@ -1401,7 +1408,7 @@ If $x, y$ are finite then $x \cup y$ is finite.
 
 % Theorem 169
 \begin{theorem}[169]
-If $x$ is finite and each element of $x$ is finite then $\bigcup x$ is finite.
+If $x$ is finite and for each class y if $y \in x$ then y is finite then $\bigcup x$ is finite.
 \end{theorem}
 
 % Theorem 170
@@ -1436,18 +1443,20 @@ $\max[x,y] = x \cup y$.
 
 % Assisting definition
 \begin{definition}
-$[u,v] \ll [x,y]$ iff $\max[u,v] < \max[x,y]$ or ($\max[u,v] = \max[x,y]$ and $u < x$)
-or ($\max[u,v] = \max[x,y]$ and $u = x$ and $v < y$).
+$[u,v] \ll [x,y]$ iff [u,v] \in R \times R and [x,y] \in R \times R and 
+($\max[u,v] < \max[x,y]$ or ($\max[u,v] = \max[x,y]$ and $u < x$)
+	or ($\max[u,v] = \max[x,y]$ and $u = x$ and $v < y$)).
 \end{definition}
 
 % Assisting
 \begin{definition}
-$\ll = \{$object $z :$ for some sets $u,v,x,y$ ($[u,v] \ll [x,y]$ and $z = [[u,v],[x,y]])\}$.
+$\lll = \{$class $z :$ for some classes $u,v,x,y,a,b$ such that
+	$[u,v] \ll [x,y]$ and a = [u,v] and b = [x,y] $z = [a,b]\}$.
 \end{definition}
 
 % Assisting
 \begin{lemma}
-$\ll$ is a relation.
+$\lll$ is a relation.
 \end{lemma}
 
 % Definition 176
@@ -1462,7 +1471,7 @@ $\ll$ is a relation.
 
 % Theorem 177
 \begin{theorem}[177]
-$\ll$ wellorders $R \times R$.
+$\lll$ wellorders $R \times R$.
 \end{theorem}
 
 % Theorem 178

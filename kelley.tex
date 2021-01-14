@@ -532,6 +532,7 @@ Take classes k,b,m such that [k,b] \in s and [b,m] \in r and [a,c] = [k,m].
 Then a = k and c = m.
 \end{proof}
 
+[prove off]
 % Theorem 58
 \begin{theorem}[58]
 (r \circ s) \circ t = r \circ (s \circ t).
@@ -575,7 +576,7 @@ r \circ (s \cup t) \subset (r \circ s) \cup (r \circ t).
 \begin{theorem}[59b]
 r \circ (s \cap t) \subset (r \circ s) \cap (r \circ t).
 \end{theorem}
-
+[/prove]
 
 % Definition 60
 \begin{definition}[60]
@@ -588,6 +589,7 @@ Let the relation inverse to r stand for r^{-1}.
 r^{-1} is a relation.
 \end{lemma}
 
+[prove off]
 % Theorem 61
 \begin{theorem}[61]
 (r^{-1})^{-1} = r.
@@ -596,12 +598,14 @@ r^{-1} is a relation.
 r \subset (r^{-1})^{-1}.
 (r^{-1})^{-1} \subset r.
 \end{proof}
+[/prove]
 
 % Lemma 62a
 \begin{lemma}[62a]
 Assume r \subset s. Then r^{-1} \subset s^{-1}.
 \end{lemma}
 
+[prove off]
 % Lemma 62b
 \begin{lemma}[62b]
 (r \circ s)^{-1} \subset (s^{-1}) \circ (r^{-1}).
@@ -626,6 +630,7 @@ Assume r \subset s. Then r^{-1} \subset s^{-1}.
 %(((s^{-1}) \circ (r^{-1}))^{-1})^{-1} \subset (r \circ s)^{-1} (by 62a).
 %(s^{-1}) \circ (r^{-1}) \subset (r \circ s)^{-1} (by 61).
 %\end{proof}
+[/prove]
 
 % Theorem 62
 \begin{theorem}[62]
@@ -650,11 +655,12 @@ if [a,b] \in f and [a,c] \in f then b = c.
 
 Let f, g stand for maps.
 
+[prove off]
 % Theorem 64
 \begin{theorem}[64]
 If f, g are maps then f \circ g is a map.
 \end{theorem}
-
+[/prove]
 
 % Definition 65
 \begin{definition}[65]
@@ -710,17 +716,18 @@ If x \in \domain f then f(x) \in \cal{U}.
 %and f(x) is a set (by 35).
 %\end{proof}
 
-	[prove off]
-% Theorem 70
-\begin{theorem}[70]
-If f is a map then f = \{class u : u = [x,y] and y = f(x)\}.
-%Then f = {[u,f(u)] : u \in \domain f}.
-\end{theorem}
 
-% Theorem 71
-%\begin{theorem}[71]
-%If \domain f = \domain g and for each element u of \domain f f(u) = g(u) then f = g.
+% Theorem 70
+%\begin{theorem}[70]
+%If f is a map then f = \{[x,y] : x,y are classes and y = f(x)\}.
+%If f is a map then f = {[u,f(u)] : u is a class and u \in \domain f}.
 %\end{theorem}
+
+[prove off]
+% Theorem 71
+\begin{theorem}[71]
+If \domain f = \domain g and for each element u of \domain f f(u) = g(u) then f = g.
+\end{theorem}
 %\begin{proof}
 %Let us show that f \subset g.
 %\begin{proof}
@@ -737,6 +744,7 @@ If f is a map then f = \{class u : u = [x,y] and y = f(x)\}.
 %Then w \in f. 
 %\end{proof} %end.
 %\end{proof}
+[/prove]
 
 % Axiom of substitution
 \begin{axiom}[V]
@@ -748,14 +756,15 @@ Let f be a map. If \domain f is a set then \range f is a set.
 If x is a set then \bigcup x is a set.
 \end{axiom}
 
+[prove off]
 % Definition 72
 \begin{definition}[72]
- x \times y = \{[u,v] : u \in x and v \in y\}.
+ x \times y = \{[u,v] : u,v are classes and u \in x and v \in y\}.
 \end{definition}
 
 % Theorem 73
 \begin {theorem}[73]
-If u,v are sets then <u> \times <v> is a set.
+If u,v are sets then <u> \times v is a set.
 \end{theorem}
 
 % Theorem 74
@@ -769,6 +778,7 @@ If x,y are sets then x \times y is a set.
 %\range f = \{class z : for some class u (u \in x and z = (<u> \times y))\}.
 %Consequently \bigcup \range f = x \times y.
 %\end{proof}
+[/prove]
 
 % Theorem 75
 \begin{theorem}[75]
@@ -929,11 +939,6 @@ then for each element u of x not f(u) (r) u.
 \begin{definition}[95]
 A oneonefunction is a map f such that f^{-1} is a map.
 \end{definition}
-
-% Unnumbered
-\begin{lemma}
-f is a oneonefunction iff for all elements x,y of \domain f such that x \neq y f(x) \neq f(y).
-\end{lemma}
 
 % Theorem 96a
 \begin{theorem}[96a]

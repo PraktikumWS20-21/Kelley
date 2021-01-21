@@ -79,8 +79,7 @@ Let $a \in b$ stand for $a$ is an element of $b$.
 
 % Axiom I. Axiom of extent.
 \begin{axiom}[I] 
-For each $x, y $ 
-$x = y$ if and only if for each $z$ $z \in x$ 
+For each class $x, y$ $x = y$ if and only if for each $z$ $z \in x$ 
 when and only when $z \in y$.
 \end{axiom}
 
@@ -100,12 +99,12 @@ a set is a class $x$ such that for some class $y$ $x \in y$.
 
 % Definition 2
 \begin{definition}[2] 
-$x \cup y = \{$set $z : z \in x or z \in y \}$.
+$x \cup y = \{$class $z : z \in x or z \in y \}$.
 \end{definition}
 
 % Definition 3
 \begin{definition}[3] 
-$x \cap y = \{$set $u : u \in x and u \in y \}$.
+$x \cap y = \{$class $u : u \in x and u \in y \}$.
 \end{definition}
 
 Let the union of x and y stand for x \cup y.
@@ -145,7 +144,7 @@ Let $a \notin b$ stand for $a$ is not an element of $b$.
 
 % Definition 10
 \begin{definition}[10] 
-$\sim x = \{$set $y : y \notin x\}$.
+$\sim x = \{$class $y : y \notin x\}$.
 \end{definition}
 Let the complement of x stand for \sim x.
 
@@ -170,7 +169,7 @@ x \cap (y \sim z) = (x \cap y) \sim z.
 
 % Definition 15
 \begin{definition}[15] 
-0 = \{set x : x \neq x\}.
+0 = \{class x : x \neq x\}.
 \end{definition}
 Let the void class stand for 0.
 Let zero stand for 0.
@@ -187,7 +186,7 @@ x \notin 0.
 
 % Definition 18
 \begin{definition}[18]
-\cal{U} = \{set x : x = x\}.
+\cal{U} = \{class x : x = x\}.
 \end{definition}
 Let the universe stand for \cal{U}.
 
@@ -208,12 +207,12 @@ x \cup \cal{U} = \cal{U} and x \cap \cal{U} = x.
 
 % Definition 22
 \begin{definition}[22]
-\bigcap x = \{set z : for each y if y \in x then z \in y\}.
+\bigcap x = \{class z : for each y if y \in x then z \in y\}.
 \end{definition}
 
 % Definition 23
 \begin{definition}[23]
-\bigcup x = \{set z : for some y (z \in y and y \in x)\}.
+\bigcup x = \{class z : for some y (z \in y and y \in x)\}.
 \end{definition}
 
 Let the intersection of x stand for \bigcap x.
@@ -274,7 +273,10 @@ If x \in y then x \subset \bigcup y
 and \bigcap y \subset x.
 \end{theorem}
 
-%\section{EXISTENCE OF SETS}
+\end{forthel}
+
+\section{EXISTENCE OF SETS}
+\begin{forthel}
 
 % Axiom of subsets.
 \begin{axiom}
@@ -302,7 +304,7 @@ If x \neq 0 then \bigcap x is a set.
 
 % Definition 36
 \begin{definition}[36]
-2^{x} = \{set y : y \subset x\}.
+2^{x} = \{class y : y \subset x\}.
 \end{definition}
 
 % Theorem 37
@@ -322,23 +324,40 @@ if z \subset x then z \in y.
 
 % The Russell paradox.
 % Unnumbered
-\begin{definition}
-\cal{R} = \{set x : x \notin x\}.
-\end{definition}
+%\begin{definition}
+%\cal{R} = \{class x : x \notin x\}.
+%\end{definition}
+
+% Test
+%\begin{lemma}
+%Contradiction.
+%\end{lemma}
 
 % Unnumbered
-\begin{theorem}
-\cal{R} is not a set.
-\end{theorem}
+%\begin{theorem}
+%\cal{R} is not a set.
+%\end{theorem}
+%\begin{proof}
+%Proof by contradiction.
+%Assume that \cal{R} is a set.
+%If \cal{R} \notin \cal{R} then \cal{R} \in \cal{R}.
+%Contradiction.
+%\end{proof}
 
 % Theorem 39
-\begin{theorem}[39]
-\cal{U} is not a set.
-\end{theorem}
+%\begin{theorem}[39]
+%\cal{U} is not a set.
+%\end{theorem}
+%\begin{proof}
+%Proof by contradiction.
+%Assume that \cal{U} is a set.
+%Then \cal{R} is a set.
+%Contradiction.
+%\end{proof}
 
 % Definition 40
 \begin{definition}[40]
-<x> = \{set z : if x \in \cal{U} then z = x\}.
+<x> = \{class z : if x \in \cal{U} then z = x\}.
 \end{definition}
 Let the singleton of x stand for <x>.
 
@@ -347,7 +366,7 @@ Let the singleton of x stand for <x>.
 
 % Theorem 41
 \begin{theorem}[41]
-If x is a set then for each y y \in <x> iff y = x.
+If x is a set then for each class y y \in <x> iff y = x.
 \end{theorem}
 
 % Theorem 42
@@ -664,23 +683,28 @@ If f, g are maps then f \circ g is a map.
 
 % Definition 65
 \begin{definition}[65]
-\domain x = \{class u | for some v [u,v] \in x\}.
+\domain x = \{object u | for some v [u,v] \in x\}.
 \end{definition}
 
 % Definition 66
 \begin{definition}[66]
-\range x = \{class v | for some u [u,v] \in x\}.
+\range x = \{object v | for some u [u,v] \in x\}.
 \end{definition}
+
+% Test
+\begin{lemma}
+\cal{U} is a map.
+\end{lemma}
 
 % Theorem 67
 \begin{theorem}[67]
 \domain \cal{U} = \cal{U} and \range \cal{U} = \cal{U}.
 \end{theorem}
-%\begin{proof}
-%Let x be a class.
-%If x \in \cal{U} then (x,0), (0,x) \in \cal{U}.
-%x \in \domain \cal{U} and x \in \range \cal{U}.
-%\end{proof}
+\begin{proof}
+Let x be a class. Let y be a void class.
+If x \in \cal{U} then [x,y], [y,x] \in \cal{U}.
+x \in \domain \cal{U} and x \in \range \cal{U}.
+\end{proof}
 
 %\begin{definition}
 %Let f be a map. Let u \in \domain f.
@@ -698,14 +722,15 @@ The value of f at u is a class v such that [u,v] \in f.
 \end{signature}
 Let f(u) stand for the value of f at u.
 
+[prove off]
 % Theorem 69
 \begin{theorem}[69a]
 If x \notin \domain f then f(x) = \cal{U}.
 \end{theorem}
-\begin{proof}
-If x \notin \domain f 
-then \{class y | [x,y] \in f\} = 0 and f(x) = \cal{U} (by 24).
-\end{proof}
+%\begin{proof}
+%If x \notin \domain f 
+%then \{class y | [x,y] \in f\} = 0 and f(x) = \cal{U} (by 24).
+%\end{proof}
 
 \begin{theorem}[69b]
 If x \in \domain f then f(x) \in \cal{U}.
